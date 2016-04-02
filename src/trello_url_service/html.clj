@@ -25,3 +25,7 @@
 	[page]
 	(first (get-node-at-path [:head :title] page)))
 
+(defn get-title-of-page
+	[url]
+	(-> url get-page get-title))
+

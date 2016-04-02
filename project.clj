@@ -10,7 +10,8 @@
                  [ring-basic-authentication "1.0.5"]
                  [environ "0.5.0"]
                  [com.cemerick/drawbridge "0.0.6"]
-                 [clj-tagsoup/clj-tagsoup "0.3.0" :exclusions [org.clojure/clojure]]]
+                 [clj-tagsoup/clj-tagsoup "0.3.0" :exclusions [org.clojure/clojure]]
+                 [cheshire "5.2.0"]]
   :min-lein-version "2.0.0"
   :plugins [[environ/environ.lein "0.2.1"]]
   :hooks [environ.leiningen.hooks]
