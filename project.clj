@@ -17,6 +17,7 @@
   :hooks [environ.leiningen.hooks]
   :uberjar-name "trello-url-service-standalone.jar"
   :profiles {:dev {:plugins [[com.jakemccrary/lein-test-refresh "0.14.0"]
-                             [venantius/ultra "0.4.1"]]}
+                             [venantius/ultra "0.4.1"]
+                             [lein-environ "1.0.2"]]}
              :production {:env {:production true}} 
              :uberjar {:aot :all}})

@@ -9,7 +9,8 @@
             [ring.adapter.jetty :as jetty]
             [ring.middleware.basic-authentication :as basic]
             [cemerick.drawbridge :as drawbridge]
-            [environ.core :refer [env]]))
+            [environ.core :refer [env]]
+            [trello-url-service.hook :as hook]))
 
 (defn- authenticated? [user pass]
   ;; TODO: heroku config:add REPL_USER=[...] REPL_PASSWORD=[...]
@@ -27,6 +28,8 @@
        {:status 200
         :headers {"Content-Type" "text/plain"}
         :body (pr-str ["Hello world!!!"])})
+  (POST "/hook" req
+        (hook/handle-hook req))
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
